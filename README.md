@@ -1,5 +1,5 @@
-# Semi-Auto Cover Letter Generator
-A Python program to semi-automatically generate cover letters. This currently only works with job postings from the SFU co-op board because fields like job title, address, etc., are clearly listed out and can be parsed.
+# Cover Letter Generator
+A Python program to generate cover letters. This currently only works with job postings from the SFU co-op board because fields like job title, address, etc., are clearly listed out and can be parsed.
 
 ## How to use
 1. Clone the project or download it
