@@ -7,7 +7,7 @@ A Python program to generate cover letters. This currently only works with job p
 3. Configure `config.yml` which contains personal information that doesn't change often, like name, email, etc.
 4. Copy and paste the job posting information into `posting.txt`. If you don't have access to `posting.txt`, you can manually fill out 
 ```
-python conversion.py [options]
+python generate.py [options]
 ```
 
 ## Options
