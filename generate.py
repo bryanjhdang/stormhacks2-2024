@@ -11,13 +11,11 @@ POSTING_YML_DIR = "configuration/posting.yml"
 PREFERENCES_DIR = "configuration/preferences.yml"
 OUTPUT_DIR = "output"
 
-# Load preferences.yml
 def load_preferences():
     with open(PREFERENCES_DIR, 'r') as file:
         preferences = yaml.safe_load(file)
     return preferences
 
-# Load posting.txt
 def load_posting_txt():
     posting_data = {}
     
@@ -25,7 +23,6 @@ def load_posting_txt():
         for line in file:
             # Strip leading/trailing whitespace from each line
             line = line.strip()
-            # Skip empty lines
             if not line:
                 continue
             
@@ -36,23 +33,19 @@ def load_posting_txt():
     
     return posting_data
 
-# Load posting.yml
 def load_posting_yml():
     with open(POSTING_YML_DIR, 'r') as file:
         posting = yaml.safe_load(file)
     return posting
 
-# Load the cover letter template
 def load_template():
     with open(TEMPLATE_DIR, 'r') as file:
         template = file.read()
     return template
 
-# Fill the template with the provided details
 def fill_template(template, details):
     return template.format(**details)
 
-# Generate PDF from the filled template
 def generate_pdf(content, output_filename="output.pdf"):
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
@@ -61,8 +54,6 @@ def generate_pdf(content, output_filename="output.pdf"):
     
     # Create a canvas object and set the page size to letter (8.5 x 11 inches)
     c = canvas.Canvas(output_path, pagesize=letter)
-
-    # Set font to Times New Roman with size 12
     c.setFont("Times-Roman", 12)
 
     # Split the content into lines to draw each line
@@ -76,7 +67,6 @@ def generate_pdf(content, output_filename="output.pdf"):
     c.save()
     print(f"PDF generated: {output_path}")
 
-# Main function to generate the cover letter
 def generate_cover_letter(manual_posting):
     preference_detail = load_preferences()
     template = load_template()
