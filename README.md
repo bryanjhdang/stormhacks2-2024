@@ -5,7 +5,7 @@ A Python program to generate cover letters. This currently only works with job p
 1. Clone the project or download it
 2. Fill out `coverletter-template.md` with your cover letter text
 3. Configure `config.yml` which contains personal information that doesn't change often, like name, email, etc.
-4. Copy and paste the job posting information into `posting.txt`. If you don't have access to `posting.txt`, you can manually fill out 
+4. Copy and paste the job posting information into `posting.txt`. If you don't have access to the SFU coop board, you can manually fill out 
 ```
 python generate.py [options]
 ```
